@@ -1,0 +1,90 @@
+.background
+{
+  background-color: rgb(0, 0, 0);
+  width:100%;
+  height:100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.infinity-loader
+{
+  position: fixed;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  width:130px;
+  height:70px;
+}
+
+.infinity-loader .bg div,
+.infinity-loader > .fg > div >div
+{
+   width: 70px;
+   height: 70px;
+   border: 10px solid rgb(46, 42, 42);
+   box-sizing: border-box;
+   border-radius: 50%;
+   position: absolute;
+}
+
+.infinity-loader .bg .right-bg
+{
+  transform:translateX(100%);
+  left:-10px;
+}
+
+.infinity-loader > .fg > div >div
+{
+  border-color: aqua  transparent transparent;
+  filter:drop-shadow(0 0 8px aqua);
+  transform:rotate(135deg);
+  animation: spin 4s linear infinite;
+  position:static;
+}
+.infinity-loader > .fg > div 
+{
+  clip:rect(0,70px,35px,0);
+  position: absolute;
+}
+
+.infinity-loader > .fg > .bottom-right-rect
+{
+  
+  left:-10px;
+  transform: translateX(100%) scale(1,-1);
+}
+.infinity-loader > .fg > .bottom-right-rect > div
+{
+  border-color: greenyellow transparent transparent;
+  filter:drop-shadow(0 0 8px greenyellow);
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+.infinity-loader > .fg > .top-right-rect
+{
+  left:-10px;
+  transform: translateX(100%) scale(-1,1);
+}
+.infinity-loader > .fg > .top-right-rect > div
+{
+  border-color:orange transparent transparent;
+  background:-moz-repeating-linear-gradient(orange,palevioletred);
+  animation-delay: 2s;
+  filter:drop-shadow(0 0 8px orange);
+}
+.infinity-loader > .fg > .bottom-left-rect
+{
+  transform:scale(-1);
+}
+.infinity-loader > .fg > .bottom-left-rect > div
+{
+  border-color: palevioletred transparent transparent;
+  animation-delay: 3s;
+  filter:drop-shadow(0 0 8px palevioletred);
+}
+
+
+@keyframes spin {
+  50%,100%{transform: rotate(495deg);}
+}
